@@ -1,0 +1,980 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/subset-Poppins-Bold.woff2') format('woff2'),
+        url('../fonts/subset-Poppins-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/subset-Poppins-Regular.woff2') format('woff2'),
+        url('../fonts/subset-Poppins-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/subset-Poppins-Light.woff2') format('woff2'),
+        url('../fonts/subset-Poppins-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+html
+{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #dbdbdb;
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Scroll bar */
+::-webkit-scrollbar 
+{
+    display: none;
+}
+
+.scroll-ctnr
+{
+    height: 400px;
+    width: 2px;
+    position: fixed;
+    margin-top: calc(100vh - 75vh);
+    margin-left: calc(100vw - 98vw);
+    z-index: 99;
+}
+
+.scroll-page
+{
+    height: 100%;
+    width: 2px;
+    background-color: grey;
+}
+
+.scroll-page .scroll-user
+{
+    width: 2px;
+    background-color: #ff0000;
+}
+
+/* Lazy-Load */
+.lazy-load
+{
+    opacity: 0;
+    transition: opacity 2s;
+    will-change: opacity;
+}
+
+.lazy-load.loaded
+{
+    opacity: 1;
+}
+
+/* Reveal */
+.reveal
+{
+    transform: translateY(20vh);
+    opacity: 0;
+    transition: transform 2s cubic-bezier(0, 0, 0, 1), opacity 1s;
+    will-change: transform, opacity;
+}
+
+.reveal.revealed
+{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Header */
+header
+{
+    height: 60px;
+}
+
+.logo
+{
+  margin: 10px 20px;  
+}
+
+.nav
+{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    background-color: #020306;
+}
+
+.nav-a
+{
+    width: 100%;
+}
+
+.nav ul
+{
+    padding: 0;
+    margin: 10px;
+}
+
+.nav li
+{
+    list-style-type: none;
+}
+
+.nav a{
+    position: relative;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    padding: 5px 30px;
+    transition: ease 0.5s;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-style: normal;
+}
+
+.nav a:hover {
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
+    transition: ease 0.5s;
+}
+
+/* First-ctnr */
+.cover-img
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.cover-img img
+{
+    width: 100%;
+}
+
+.avalaible-ctnr
+{
+    top: 30%;
+    left: 15%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.avalaible-ctnr h1
+{
+    color: #ff0000;
+    font-size: 3em;
+    margin: -27px;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-style: normal;
+}
+
+.avalaible-ctnr h2
+{
+    color: #ff0000;
+    font-size: 3em;
+    margin: 0;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-style: normal;
+}
+
+.avalaible-ctnr button
+{
+    width: 405px;
+    height: 100px;
+    margin: -10px;
+    border: 1px solid red;
+    background: transparent;
+    transition: ease 0.5s;
+}
+
+.avalaible-ctnr button a
+{
+    color: red;
+    transition: ease 0.5s;
+}
+
+.avalaible-ctnr button:hover 
+{
+    background-color: #ff0000;
+    transition: ease 0.5s;
+}
+
+.avalaible-ctnr button:hover a 
+{
+    color: #020306;
+    transition: ease 0.5s;
+}
+
+.avalaible-ctnr a
+{
+    color: red;
+    text-decoration: none;
+    font-size: 3em;
+    font-weight: 200;
+}
+
+.first-ctnr img
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Album ctnr */
+.album-main-ctnr
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+}
+
+.album-ctnr
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+.album-img
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: auto;
+}
+
+.album-img img
+{
+    margin: 25px 0;
+    width: 80%;
+
+}
+
+.music-player-ctnr
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-spotify
+{
+    color: #ff0000;
+    font-size: 35px;
+    transition: ease 0.5s;
+}
+
+.youtube-alt
+{
+    color: #ff0000;
+    font-size: 40px;
+    transition: ease 0.5s;
+}
+
+.fa-apple
+{
+    color: #ff0000;
+    font-size: 40px;
+    transition: ease 0.5s;
+}
+
+.tracklist
+{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tracklist p
+{
+    color: #ff0000;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+/* Clip ctnr */
+
+.bio-part-ctnr
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 150px 0;
+}
+
+.bio-part-ctnr img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bio-part
+{
+    position: absolute;
+    top: 57%;
+    left: 54%;
+    width: 42%;
+}
+
+.bio-part p
+{
+    color: white;
+    text-align: center;
+    font-family: "poppins";
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+.clip-ctnr
+{
+    position: absolute;
+    top: 7%;
+    left: 56.5%;
+}
+
+
+/* Tickets ctnr */
+.tickets-main-ctnr
+{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 150px 0;
+}
+
+.tickets-ctnr
+{
+    width: 70%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.tickets-ctnr p
+{
+    margin: 0 20px;
+}
+
+.date-ctnr
+{
+    display: flex;
+    justify-content: space-between;
+    width: 185px;
+}
+
+.date
+{
+    font-family: 'poppins';
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.city
+{
+    font-family: 'poppins';
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.place p
+{
+    font-family: 'poppins';
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+.btn-tickets button
+{
+    background-color: transparent;
+    border: 1px solid;
+    width: 100px;
+    height: 25px;
+    transition: ease 0.5s;
+}
+
+.btn-tickets a
+{
+    text-decoration: none;
+    color: #020306;
+    transition: ease 0.5s;
+}
+
+.btn-tickets button:hover
+{
+    background-color: #dbdbdb;
+    transition: ease 0.5s;
+}
+
+.btn-tickets button:hover a
+{
+    transition: ease 0.5s;
+    color: #ff0000;
+}
+
+.tickets-main-ctnr hr
+{
+    width: 71%;
+    height: 1px;
+    margin-bottom: 25px;
+    border: none;
+    background-color: #020306;
+}
+
+/* Partie blog */
+
+.blog-main-ctnr
+{
+   width: 100vw;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+}
+
+.blog-ctnr
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10%;
+}
+
+.title-blog
+{
+    margin: 0;
+    font-family: "poppins";
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.date-blog
+{
+    margin: 0;
+    font-family: "poppins";
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+.blog-ctnr hr
+{
+    width: 500px;
+    height: 1px;
+    margin: 0;
+    border: none;
+    background-color: #ff0000;
+}
+
+.txt-blog
+{
+    margin: 0;
+    font-family: "poppins";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+/* Footer */
+
+footer
+{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #020306;
+}
+
+.nav-logo-ctnr
+{
+    display: flex;
+    width: 70%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.nav1
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: auto;
+}
+
+.nav1 a
+{
+    text-decoration: none;
+    margin: 30px;
+    font-family: "poppins";
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    transition: ease 0.5s;
+}
+
+.nav1 :hover
+{
+    transition: ease 0.5s;
+    color: #ff0000;
+}
+
+.nav2
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    height: auto;
+}
+
+.nav2 a
+{
+    text-decoration: none;
+    margin: 30px;
+    font-family: "poppins";
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    transition: ease 0.5s;
+}
+
+.nav2 :hover
+{
+    transition: ease 0.5s;
+    color: #ff0000;
+}
+
+.social-media-footer
+{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: auto;
+}
+
+i
+{
+    color: white;
+    font-size: 30px;
+    margin: 30px;
+}
+
+
+/* Media */
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) 
+{ 
+    /* nav */
+    .nav a
+    {
+        padding: 2px 10px;
+        font-size: 1em;
+    }
+
+    /* Avalaible part */
+    .avalaible-ctnr h1
+    {
+        font-size: 1.3em;
+    }
+
+    .avalaible-ctnr h2
+    {
+        font-size: 1.2em;
+        margin: 15px;
+    }
+
+    .avalaible-ctnr button
+    {
+        width: 150px;
+        height: 50px;
+    }
+
+    .avalaible-ctnr a
+    {
+        font-size: 1.2em;
+    }
+
+    /* Album-ctnr */
+    .album-main-ctnr
+    {
+        margin-top: 55px;
+    }
+    
+    .album-ctnr
+    {
+        width: 95%;
+    }
+
+    .album-img
+    {
+        width: 55%;
+    }
+
+    .music-player-ctnr .fab
+    {
+        margin: 5px;
+    }
+
+    .music-player-ctnr .fa-spotify
+    {
+        font-size: 15px;
+    }
+
+    .music-player-ctnr .fa-youtube
+    {
+        font-size: 15px;
+    }
+
+    .music-player-ctnr .fa-apple 
+    {
+        font-size: 20px;
+    }
+
+    .tracklist
+    {
+        width: 97%;
+    }
+
+    .tracklist1, .tracklist2
+    {
+        font-size: 0.6em;
+    }
+
+    /* Clip-ctnr */
+    .bio-part-ctnr
+    {
+        margin: 85px 0;
+    }
+
+    .clip-ctnr
+    {
+        display: none;
+    }
+
+    .bio-part
+    {
+        width: 48%;
+        top: 7%;
+        left: 50%;
+    }
+
+    .bio-part p
+    {
+        font-size: 0.5em;
+    }
+
+    /* Ticket  */
+
+    .tickets-ctnr
+    {
+        width: 95%;
+    }
+
+    .ticket-ctnr hr
+    {
+        width: 86%;
+    }
+
+    .date-ctnr p
+    {
+        font-size: 0.6em;
+    }
+
+    .place p
+    {
+        font-size: 0.7em;
+    }
+
+    /* Footer */
+    .nav-logo-ctnr ul
+    {
+        padding: 0;
+    }
+
+    .social-media-footer
+    {
+        width: 100%;
+    }
+
+    /* Blog */
+    .blog-ctnr hr
+    {
+        width: 120%;
+    }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) 
+{ 
+    /* nav */
+    .nav a
+    {
+        padding: 5px 10px;
+    }
+
+    /* Avalaible part */
+    .avalaible-ctnr h1
+    {
+        font-size: 1.8em;
+    }
+
+    .avalaible-ctnr h2
+    {
+        font-size: 1.7em;
+        margin: 8px;
+    }
+
+    .avalaible-ctnr button
+    {
+        width: 220px;
+        height: 60px;
+    }
+
+    .avalaible-ctnr a
+    {
+        font-size: 1.8em;
+    }
+
+    /* Album-ctnr */
+
+    .album-ctnr
+    {
+        width: 90%;
+    }
+
+    .album-img
+    {
+        width: 45%;
+    }
+
+    .music-player-ctnr .fab
+    {
+        margin: 10px;
+    }
+
+    .music-player-ctnr .fa-spotify
+    {
+        font-size: 20px;
+    }
+
+    .music-player-ctnr .fa-youtube
+    {
+        font-size: 20px;
+    }
+
+    .music-player-ctnr .fa-apple 
+    {
+        font-size: 25px;
+    }
+
+    .tracklist
+    {
+        width: 90%;
+    }
+
+    .tracklist1, .tracklist2
+    {
+        font-size: 0.8em;
+    }
+
+    /* Clip container */
+
+    .clip-ctnr
+    {
+        display: none;
+    }
+
+    .bio-part
+    {
+        width: 48%;
+        top: 12%;
+        left: 49%;
+    }
+
+    .bio-part p
+    {
+        font-size: 0.7em;
+    }
+
+    /* Ticket  */
+
+    .tickets-ctnr
+    {
+        width: 85%;
+    }
+
+    .ticket-ctnr hr
+    {
+        width: 86%;
+    }
+
+    /* Footer */
+    .nav-logo-ctnr ul
+    {
+        padding: 0;
+    }
+
+    .social-media-footer
+    {
+        width: 55%;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) 
+{ 
+    /* Avalaible part */
+    .avalaible-ctnr h1
+    {
+        font-size: 2em;
+    }
+
+    .avalaible-ctnr h2
+    {
+        font-size: 2em;
+        margin: 5px;
+    }
+
+    .avalaible-ctnr button 
+    {
+        width: 285px;
+        height: 70px;
+    }
+
+    .avalaible-ctnr button a 
+    {
+        font-size: 2em;
+    }
+
+    /* Album container */
+    .album-img 
+    {
+        width: 40%;
+    }
+
+    .music-player-ctnr .fab
+    {
+        margin: 10px;
+    }
+
+    .music-player-ctnr .fa-spotify
+    {
+        font-size: 25px;
+    }
+
+    .music-player-ctnr .fa-youtube
+    {
+        font-size: 25px;
+    }
+
+    .music-player-ctnr .fa-apple 
+    {
+        font-size: 30px;
+    }
+
+    .tracklist1, .tracklist2 
+    {
+        font-size: 0.9em;
+    }
+
+    /* Clip container */
+
+    .clip-ctnr
+    {
+        top: 10%;
+        left: 55%;
+    }
+
+    .bio-part
+    {
+        top: 38%;
+        left: 49%;
+        width: 50%;
+    }
+
+    .bio-part p
+    {
+        font-size: 0.8em;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) 
+{ 
+    .bio-part
+    {
+        top: 46%;
+        left: 49%;
+        width: 50%;
+    }
+
+    .bio-part p
+    {
+        font-size: 0.9em;
+    }
+
+    .clip-ctnr
+    {
+        top: 11%;
+        left: 54%;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1679.98px) 
+{ 
+    .clip-ctnr
+    {
+        top: 7%;
+        left: 58.5%;
+    }
+
+    .bio-part
+    {
+        top: 38%;
+        left: 54%;
+    }
+}
+
+@media (min-width: 1680px)
+{
+    .bio-part
+    {
+        top: 57%;
+        left: 54%;
+        width: 42%;
+    }
+}
