@@ -1,7 +1,7 @@
 {
-  "name": "webpack-three-js-template",
+  "name": "event-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "Site événementielle pour promouvoir l'album after hour de The Weeknd",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
@@ -9,15 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/brunosimon/webpack-three-js-template.git"
+    "url": "git+https://github.com/Thadro/TheWeeknd-app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brunosimon/webpack-three-js-template/issues"
-  },
-  "homepage": "https://github.com/brunosimon/webpack-three-js-template#readme",
+
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",

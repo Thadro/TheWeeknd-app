@@ -365,57 +365,64 @@ header
     width: 100vw;
     height: auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: 150px 0;
 }
 
-.tickets-ctnr
+tbody
 {
-    width: 70%;
+    width: 70vw;
+}
+
+table
+{
+    width: 80%;
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
+    justify-content: center;
 }
 
-.tickets-ctnr p
+tr
 {
-    margin: 0 20px;
-}
-
-.date-ctnr
-{
+    border-bottom: 1px solid #020306;
+    margin: 0px 0px 75px 0px;
     display: flex;
+    width: 100%;
+    align-items: center;
     justify-content: space-between;
-    width: 185px;
 }
 
-.date
+.ticket-date
 {
+    margin: 0px 25px 0px 5px;
     font-family: 'poppins';
     font-weight: 300;
     font-size: 1em;
 }
 
-.city
+.ticket-country
 {
+    margin: 0px 0px;
     font-family: 'poppins';
     font-weight: bold;
     font-size: 1em;
 }
 
-.place p
+.ticket-place
 {
+    margin: 0px 70px;
     font-family: 'poppins';
     font-weight: 300;
     font-size: 0.9em;
 }
 
-.btn-tickets button
+
+.btn-tickets
 {
     background-color: transparent;
+    margin: 20px;
     border: 1px solid;
     width: 100px;
     height: 25px;
@@ -429,25 +436,16 @@ header
     transition: ease 0.5s;
 }
 
-.btn-tickets button:hover
+.btn-tickets:hover
 {
     background-color: #dbdbdb;
     transition: ease 0.5s;
 }
 
-.btn-tickets button:hover a
+.btn-tickets:hover a
 {
     transition: ease 0.5s;
     color: #ff0000;
-}
-
-.tickets-main-ctnr hr
-{
-    width: 71%;
-    height: 1px;
-    margin-bottom: 25px;
-    border: none;
-    background-color: #020306;
 }
 
 /* Partie blog */
@@ -697,27 +695,33 @@ i
     }
 
     /* Ticket  */
-
-    .tickets-ctnr
+    .tickets-main-ctnr
     {
-        width: 95%;
+        width: 100vw;
     }
 
-    .ticket-ctnr hr
+    .ticket-date
     {
-        width: 86%;
+        font-size: 0.5em;
     }
 
-    .date-ctnr p
-    {
-        font-size: 0.6em;
-    }
-
-    .place p
+    .ticket-country
     {
         font-size: 0.7em;
     }
 
+    .ticket-place
+    {
+        font-size: 0.5em;
+        margin: 0px 20px;
+    }
+
+    .btn-tickets 
+    {
+        margin: 20px 0px;
+        font-size: 0.7em;
+    }
+    
     /* Footer */
     .nav-logo-ctnr ul
     {
@@ -831,14 +835,24 @@ i
 
     /* Ticket  */
 
-    .tickets-ctnr
+    .tickets-main-ctnr
     {
-        width: 85%;
+        width: 100vw;
     }
 
-    .ticket-ctnr hr
+    .ticket-date
     {
-        width: 86%;
+        font-size: 0.7em;
+    }
+
+    .ticket-country
+    {
+        font-size: 0.9em;
+    }
+
+    .ticket-place
+    {
+        font-size: 0.7em;
     }
 
     /* Footer */

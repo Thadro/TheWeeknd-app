@@ -1,5 +1,7 @@
 import './style/main.css'
 import './all.min.js'
+import * as firebase from 'firebase/app';
+import 'firebase/firebase-database'
 
 /**
  * Scroll Bar
@@ -97,4 +99,44 @@ if(window.innerWidth >= 768 && window.innerWidth < 991.98)
     iframe.style.width = '300px'
     iframe.style.height = '120px'
 }
+
+// Ticket refresh
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBfmjCRja_dHQueNyG2tEyfkkXCx2HKns8",
+    authDomain: "the-weeknd-4fe7d.firebaseapp.com",
+    databaseURL: "https://the-weeknd-4fe7d.firebaseio.com",
+    projectId: "the-weeknd-4fe7d",
+    storageBucket: "the-weeknd-4fe7d.appspot.com",
+    messagingSenderId: "638374224165",
+    appId: "1:638374224165:web:70a40ab35616e585ea7acc",
+    measurementId: "G-R43T3Y2HJZ"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const tourRef = firebase.database().ref("tour/");
+
+tourRef.on('value', function (snapshot) {
+    let displayTicket = '';
+    snapshot.forEach(function (item) {
+        // console.log(item.val())
+
+        displayTicket += `
+    <tr>
+        <td class='ticket-date'>${item.val().date}</td>
+        <td class='ticket-country'>${item.val().CountryCity}</td>
+        <td class='ticket-place'>${item.val().place}</td>
+        <td> 
+            <button class='btn-tickets'>
+                <a href="">TICKETS</a>
+            </button>
+        </td>
+    </tr>
+    `
+    })
+
+    document.querySelector('.tbody-data').innerHTML=displayTicket;
+
+})
 
